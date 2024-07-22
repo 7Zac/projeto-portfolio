@@ -1,0 +1,339 @@
+html {
+    color: white;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(300deg, #1177de,#39586d,#000020);
+    font-family: "Poppins", sans-serif;
+    margin: 0 auto;
+    max-width: 1120px;
+    background-size: 120% 120%;
+    
+}
+
+
+.cabecalho {
+    display: flex;
+    align-items: center;
+    background: transparent;
+    backdrop-filter: blur(10px);
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 1000; /* Para garantir que a navbar fique acima de outros elementos */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.cabecalho .menu{
+    display: flex;
+    margin-left: 27vw;
+
+}
+
+.cabecalho .navbar{
+    display: flex;
+    
+}
+
+.cabecalho .menu li{
+    display: flex;
+    align-items: center;
+    
+}
+
+.cabecalho .menu img{
+    width: 15px;
+    height: 15px;
+}
+
+.cabecalho .menu .hamburger{
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+
+
+.cabecalho .menu .hamburger span{
+    height: 3px;
+    width: 25px;
+    background: #fff;
+    margin: 4px 0;
+    border-radius: 5px solid #fff;
+    transition: 0.3s;
+}
+.cabecalho .logo {
+   max-width: 65px;
+   transition: 0.3s;
+   margin-left: 20vw;
+}
+
+.cabecalho a:hover .logo {
+    color: #0ED2F7;
+    transform: scale(1.05);
+    /* -webkit-filter: drop-shadow(0 0 2px rgba(0, 140, 255));*/
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5)); 
+    
+}
+
+.cabecalho .menu ul{
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 80px;
+
+}
+
+.cabecalho .menu .curriculo{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.cabecalho .menu .behance{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.cabecalho .menu li a { 
+    display: flex;
+    padding: 10px 5px;  
+    font-size: 20px;
+    text-transform: capitalize;
+    transition: 0.3s;
+}
+
+.cabecalho .menu li a:hover {
+    color: #0575E6;
+}
+
+.home {
+    display: flex;
+    min-height: calc(100vh - 125px);
+    align-items: center;
+    gap: 50px;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+
+.home .informacoes {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    letter-spacing: 1px;
+    padding: 0px 50px 0px 20px;
+    max-width: 50%;
+}
+
+.home .informacoes .typing-animation{
+    font-family: "Raleway", sans-serif;
+    font-size: 40px;
+    margin-bottom: 20px;
+    border-right: 2px solid rgba(255, 255, 255, .75);
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.typing-animation{
+    animation: blinkCursor 700ms steps(40) infinite, typing 3s steps(20) 1s normal both;
+}
+
+@keyframes typing{
+    from{
+        width: 0px;
+    } to{
+        width: 12em;
+    }
+}
+
+@keyframes blinkCursor {
+    from {
+        border-right-color: rgba(255, 255, 255, .75);
+    } to {
+        border-right-color: transparent;
+    }
+}
+
+.home .informacoes p {
+    font-family: "Raleway", sans-serif;
+    font-size: 24px;
+    margin-bottom: 10px;
+
+}
+
+.home .redes-sociais {
+    display: flex;
+    gap: 20px;
+
+}
+
+.home .redes-sociais a i {
+    border: 1px solid #fff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    text-align: center;
+    font-size: 26px;
+    transition: 0.3s;
+}
+
+.home .redes-sociais a i:hover {
+    color: #0ED2F7;
+    border: 1px solid #0ED2F7;
+    transform: scale(1.1);
+}
+
+.home .container-foto .foto {
+    max-width: 450px;
+    border-radius: 100%;
+
+}
+
+.home .container-foto img {
+    width: 100%;
+    border-radius: 100%;
+}
+
+
+.home .foto.sombra-interna {
+    background: transparent;
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 15px 50px rgba(0, 0, 0, 0.5);
+    /* background: linear-gradient(to right, #0ED2F7,#0575E6,#004e92);
+    background-size: 180% 180%; */
+    animation: gradient-animation 5s ease infinite;
+}
+
+.projetos {
+    padding: 70px 0 70px;
+    border-top: 1px solid #fff;
+
+}
+
+.projetos .titulo {
+    text-align: center;
+    padding: 60px 0;
+    font-size: 45px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.projetos .container-projetos {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.projetos .projeto {
+    max-width: 260px;
+    position: relative;
+    display: none;
+    border-radius: 15px;
+    box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.5);
+    transition: 0.2s;
+}
+
+.projetos .projeto.none{
+    max-width: 260px;
+    
+    position: relative;
+    display: none;
+    animation: projects 0.8s normal both;
+    
+} 
+
+@keyframes projects{
+    from{
+        height: 0px;
+    } to{
+        height: 22.5em;
+    }
+}
+
+.projetos .projeto.ativo{
+    display: block;
+}
+
+.projetos .projeto img{
+    height: 100%;
+    border-radius: 15px;
+}
+
+.projetos .projeto h3{
+    background: transparent;
+    backdrop-filter: blur(10px);
+    width: 100%;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    position: absolute;
+    bottom: 0;
+    border-radius: 0px 0px 15px 15px;
+    
+}
+
+.projetos .projeto .informacoes-projeto{
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    font-weight: 400;
+    text-align: center;
+    opacity: 0;
+    transition: 0.3s;
+    padding: 20px;
+    border-radius: 15px;
+}
+.projetos .container-projetos .projeto:hover{
+    transform: scale(1.01);
+}
+
+.projetos .container-projetos .projeto:hover .informacoes-projeto{
+    opacity: 1;
+    background: linear-gradient(#000108, transparent 100%);
+    
+}
+
+.projetos .btn-mostrar-projetos{
+    background: none;
+    border: 1px solid #fff;
+    border-radius: 15px;
+    color: #fff;
+    width: 180px;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.projetos .btn-mostrar-projetos:hover{
+    background-color: #bfd6eb;
+    color: #39586d;
+    border: 1px solid #39586d;
+    transition: 0.6s;
+}
+
+.projetos .btn-mostrar-projetos.remover{
+    display: none;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
